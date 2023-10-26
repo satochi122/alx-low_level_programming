@@ -1,17 +1,2 @@
 #!/bin/bash
-
-# Check if the $CFILE variable is set
-if [ -z "$CFILE" ]; then
-  echo "Error: The C file is not specified. Set the CFILE variable."
-  exit 1
-fi
-
-# Run the preprocessor and save the output to the 'c' file
 gcc -E "$CFILE" -o c
-
-# Check if the preprocessor ran successfully
-if [ $? -eq 0 ]; then
-  echo "Preprocessor completed successfully. Output saved in 'c'."
-else
-  echo "Error: Preprocessor failed."
-fi
